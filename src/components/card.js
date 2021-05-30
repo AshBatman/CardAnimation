@@ -17,22 +17,23 @@ const BorderLinearProgress = withStyles((theme) => ({
     },
 }))(LinearProgress);
 
-export default function CardDesign() {
+export default function CardDesign({ name, totoalSales, targetSales }) {
+    const track = totoalSales * 100 / targetSales >= 75 ? 'On Track' : 'Off Track'
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <div style={{ flexDirection: 'row', display: 'flex' }}>
-                <p style={{ margin: '5%', width: '50%', fontWeight: 'bold', fontSize: 18 }}>TATA STEEL</p>
-                <p style={{ fontSize: 14, fontWeight: 'bold' }}>50%</p>
+                <p style={{ margin: '5%', width: '50%', fontWeight: 'bold', fontSize: 18 }}>{name}</p>
+                <p style={{ fontSize: 14, fontWeight: 'bold' }}>{totoalSales * 100 / targetSales}%</p>
                 <p style={{ fontSize: 14 }}>Complete</p>
             </div>
             <div style={{ marginLeft: '5%', position: 'relative', left: 2, top: '18%' }}>
                 <div style={{ flexDirection: 'row', display: 'flex', marginBottom: 5 }}>
                     <div>
-                        <p style={{ margin: 0, fontWeight: 'bold' }}>Total Sales - {'200'} Crores</p>
-                        <p style={{ margin: 0, fontWeight: 'bold' }}>Target Sales - {'400'} Crores</p>
+                        <p style={{ margin: 0, fontWeight: 'bold' }}>Total Sales - {totoalSales} Crores</p>
+                        <p style={{ margin: 0, fontWeight: 'bold' }}>Target Sales - {targetSales} Crores</p>
                     </div>
-                    <p style={{ marginLeft: 15, backgroundColor: 'yellow', padding: 5, marginTop: 2 }}>Off track</p>
+                    <p style={{ marginLeft: 15, backgroundColor: 'yellow', padding: 5, marginTop: 2 }}>{track}</p>
                 </div>
                 <BorderLinearProgress variant="determinate" value={50} />
             </div>
