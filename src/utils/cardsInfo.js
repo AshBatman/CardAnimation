@@ -1,0 +1,55 @@
+export const cardInfo = {
+    company: {
+        name: 'TATA STEEL',
+        TotoalSales: '200',
+        TargetSales: '400',
+        factories: [
+            {
+                name: 'Factory A',
+                TotoalSales: '200',
+                TargetSales: '400',
+                godown: [
+                    {
+                        name: 'Godown A',
+                        TotoalSales: '200',
+                        TargetSales: '400',
+                    },
+                    {
+                        name: 'Godown B',
+                        TotoalSales: '200',
+                        TargetSales: '400',
+                    }
+                ]
+            },
+            {
+                name: 'Factory B',
+                TotoalSales: '200',
+                TargetSales: '400',
+                godown: [
+                    {
+                        name: 'Godown A',
+                        TotoalSales: '200',
+                        TargetSales: '400',
+                    },
+                    {
+                        name: 'Godown A',
+                        TotoalSales: '200',
+                        TargetSales: '400',
+                    }
+                ]
+            },
+            {
+                name: 'Factory C',
+                TotoalSales: '200',
+                TargetSales: '400',
+                godown: [
+                    {
+                        name: 'Godown A',
+                        TotoalSales: '200',
+                        TargetSales: '400',
+                    }
+                ]
+            }
+        ]
+    }
+}
