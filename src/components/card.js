@@ -18,7 +18,8 @@ const BorderLinearProgress = withStyles((theme) => ({
 }))(LinearProgress);
 
 export default function CardDesign({ name, totoalSales, targetSales }) {
-    const track = totoalSales * 100 / targetSales >= 75 ? 'On Track' : 'Off Track'
+    const track = totoalSales * 100 / targetSales >= 75 ? 'On Track' : 'Off Track';
+    const backColor = totoalSales * 100 / targetSales >= 75 ? 'green' : 'yellow';
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -33,7 +34,7 @@ export default function CardDesign({ name, totoalSales, targetSales }) {
                         <p style={{ margin: 0, fontWeight: 'bold' }}>Total Sales - {totoalSales} Crores</p>
                         <p style={{ margin: 0, fontWeight: 'bold' }}>Target Sales - {targetSales} Crores</p>
                     </div>
-                    <p style={{ marginLeft: 15, backgroundColor: 'yellow', padding: 5, marginTop: 2 }}>{track}</p>
+                    <p style={{ marginLeft: 15, backgroundColor: backColor, padding: 5, marginTop: 2 }}>{track}</p>
                 </div>
                 <BorderLinearProgress variant="determinate" value={50} />
             </div>
