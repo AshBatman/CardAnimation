@@ -24,16 +24,19 @@ const theme = createMuiTheme({
     // two indexes within its tonal palette.
     // E.g., shift from Red 500 to Red 300 or Red 700.
     tonalOffset: 0.2,
+    backgroundColor: '#F1F4F9'
   },
 });
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Route exact path="/" component={HomePage} />
-      </Router>
-    </ThemeProvider>
+    <div style={{ backgroundColor: '#F1F4F9' }}>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Route exact path="/" component={HomePage} />
+        </Router>
+      </ThemeProvider>
+    </div>
   );
 }
 
